@@ -1,0 +1,49 @@
+.Profiles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.profile-text{
+    width: 50%;
+    border-left: 2px solid #ffff;
+    padding-left: 2rem;
+}
+.profile-text .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffff;
+}
+.profile-images{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Align four items in a row */
+    gap: 1.5rem;  /* Space between the items */
+    justify-items: center;  /* Align items horizontally */
+    width: 50%;
+    cursor: pointer;
+    padding-right: 1.75rem;
+}
+.profile-images a img{
+    /* display: flex; */
+    /* flex-direction: column;  Stack image and text vertically */
+    /* align-items: center; */
+    width: 100px;  /* Adjust size to fit both image and text */
+    height: 100px; /* Adjust size */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: subtle-float 4s ease-in-out infinite;
+    padding: 10px;
+    border-radius: 100%;
+    filter: drop-shadow(0 25px 15px rgba(137, 29, 29, 0.3));
+    background-color: white; 
+}
+
+@keyframes subtle-float {
+0%, 100% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-8px);
+}
+}
+

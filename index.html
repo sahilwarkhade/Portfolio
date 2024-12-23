@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahil Warkhade</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="Styles/profiles.css">
+    <link rel="stylesheet" href="Styles/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -14,6 +16,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "KkxcruUi8wvCZQIAR",
+        });
+    })();
+    </script>
+    <!-- <script src="JS/modal.js"></script> -->
 
 
 </head>
@@ -27,9 +40,9 @@
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#services" class="menu-btn">Expertise</a></li>
-                <li><a href="#skills" class="menu-btn">Skills</a></li>
                 <li><a href="#teams" class="menu-btn">Projects</a></li>
+                <li><a href="#skills" class="menu-btn">Skills</a></li>
+                <li><a href="#services" class="menu-btn">Profiles</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
@@ -61,50 +74,65 @@
             <h2 class="title">About me</h2>
             <div class="about-content">
                 <!-- <div class="column left">
-                    <img src="Images/ritikjha5700.jpg" alt="">
+                    <img src="Images/sahilwarkhade.png" alt="">
                 </div> -->
                 <div class="column right">
                     <div class="text">I'm Sahil and I'm a <span class="block-display"><span class="typing-2"></span></span></div>
-                    <!-- <p>Hi, I'm Sahil. I am a web developer, currently i'm working on MERN Stack. I'm currently in my 3rd year of B.Tech from Computer Science And Engineering branch. I have expertise in MERN Stack i prefer Full stack developement in MERN stack.
-                    </p> -->
+                    
                     <p>
-                        Welcome to my digital space! I'm Sahil Warkhade, a passionate and results-driven Full Stack Developer with a focus on the MERN (MongoDB, Express.js, React, Node.js) stack. With a strong foundation in both front-end and back-end technologies, I thrive on transforming complex ideas into seamless, user-friendly applications.I'm currently in my 3rd year of B.Tech from Computer Science And Engineering branch.
+                        Welcome to my digital space! <br/>
+                        I'm Sahil Warkhade, a Full Stack Developer specializing in the MERN stack (MongoDB, Express.js, React, Node.js). Currently in my final year of B.Tech in Computer Science and Engineering, I have a strong foundation in both front-end and back-end technologies. I enjoy solving complex problems by breaking them down into simple, efficient solutions. With a passion for creating intuitive applications and continuous learning, I focus on delivering high-quality, scalable solutions that meet user needs and enhance their experience.
                     </p>
-                    <a href="./CV/Sahil.O.Warkhade.pdf" target="_blank">Download CV</a>
+                    <a href="./CV/Sahilwarkhade.pdf" target="_blank">Download CV</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- services section start -->
-    <section class="services" id="services">
+    <!-- Project section start -->
+    <section class="teams" id="teams">
         <div class="max-width">
-            <h2 class="title">My Expertise</h2>
-            <div class="serv-content">
+            <h2 class="title">My Projects</h2>
+            <div class="carousel owl-carousel">
                 <div class="card">
                     <div class="box">
-                        <i class="fas fa-code"></i>
-                        <div class="text">Front-End Developement</div>
-                        <p>As a Front-End developer, my proficiency lies in crafting dynamic and visually appealing web applications using a powerful stack that includes HTML, Tailwind CSS, and React.
-                        </p>
+                        <img src="images/compileCode.png" alt="ProjectImage">
+                        <div class="text">CompileCode</div>
+                        <p class="trim-message">CompileCode is a collaborative, real-time code editor designed to enhance the way developers work together on coding projects. It provides a platform where multiple users can simultaneously edit, compile, and debug code in a seamless, shared environment. With real-time collaboration features, an integrated compiler, and a rich set of development tools, CompileCode enables teams to write, test, and review code efficiently, regardless of geographical location.</p>
                     </div>
+                    <a href="https://compilecode.vercel.app" target="_blank">Visit Now</a>
+                    <button class="openModalBtn" onclick="openModal(event)" data-index="1">Read More</button>
                 </div>
+
                 <div class="card">
                     <div class="box">
-                        <i class="fas fa-paint-brush"></i>
-                        <div class="text">Full-Stack Developement</div>
-                        <p>My unequivocal preference in Full-Stack Development gravitates towards the MERN stack, a cohesive and dynamic combination of MongoDB, Express.js, React.js, and Node.js.</p>
+                        <img src="images/epicentra.png" alt="ProjectImage">
+                        <div class="text">Epicentra</div>
+                        <p class="trim-message">Epicentra is a full-featured blog platform designed to foster a vibrant community of writers and readers. It allows users to explore diverse blogs, write and publish posts, like and comment on content, and interact with others in a collaborative environment. Epicentra aims to provide an intuitive and dynamic experience for content creators and consumers alike.</p>
                     </div>
+                    <a href="https://epicentra.vercel.app" target="_blank">Visit Now</a>
+                    <button class="openModalBtn" onclick="openModal(event)" data-index="2">Read More</button>
                 </div>
+
                 <div class="card">
                     <div class="box">
-                        <i class="fas fa-code"></i>
-                        <div class="text">Back-End Developement</div>
-                        <p>
-                            As a seasoned backend developer, I specialize in architecting robust and high-performance applications using the powerful combination of Node.js, Express.js, and MongoDB.</p>
+                        <img src="images/learnnotion.png" alt="ProjectImage">
+                        <div class="text">LearnNotion</div>
+                        <p class="trim-message">LearnNotion is a comprehensive Learning Management System (LMS) built using the MERN stack (MongoDB, Express, React, Node.js). It is designed to facilitate seamless creation, consumption, and interaction with educational content, catering to diverse learning needs. With its user-centric approach and robust features, LearnNotion provides a dynamic platform for educators, learners, and administrators to connect and thrive in a digital learning environment.</p>
                     </div>
+                    <a href="https://learnnotion.vercel.app" target="_blank">Visit Now</a>
+                    <button class="openModalBtn" onclick="openModal(event)" data-index="3">Read More</button>
                 </div>
-               </div>
+                
+                <div class="card">
+                    <div class="box">
+                        <img src="images/ecomzy.png" alt="ProjectImage">
+                        <div class="text">Ecomzy</div>
+                        <p class="trim-message">Ecomzy is a modern shopping cart application developed using React, Redux, and Tailwind CSS. It is designed to provide users with a seamless and intuitive shopping experience, emphasizing performance, responsiveness, and ease of use.</p>
+                    </div>
+                    <a  href="" target="_blank">Visit Now</a>
+                    <button class="openModalBtn" onclick="openModal(event)" data-index="4">Read More</button>
+                </div>
             </div>
         </div>
     </section>
@@ -119,7 +147,8 @@
                     <p>I am a dynamic and passionate professional with a strong background in web services, website development, and software development. My creative skills and diverse experiences have equipped me with the ability to tackle real-time problems and deliver innovative solutions. I am deeply committed to continuous learning and actively seek new opportunities to expand my skillset. Open to collaboration on various projects, I thrive in environments that encourage creativity and teamwork. My portfolio showcases a range of successful projects, highlighting not only technical proficiency but also a problem-solving mindset.</p>
                     <a href="#contact">Hire Me</a>
                 </div>
-                <div class="column right">
+                <div class="column right skills-container" id="skills-container"></div>
+                <!-- <div class="column right">
                     <div class="bars">
                         <div class="info">
                             <span>HTML</span>
@@ -162,60 +191,56 @@
                         </div>
                         <div class="line mysql"></div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
-    <!-- teams section start -->
-    <section class="teams" id="teams">
+    <!-- services section start -->
+    <section class="services" id="services">
         <div class="max-width">
-            <h2 class="title">My Projects</h2>
-            <div class="carousel owl-carousel">
+            <h2 class="title">My Coding Profile's</h2>
+            <!-- <div class="serv-content">
                 <div class="card">
                     <div class="box">
-                        <img src="images/project1.png" alt="ProjectImage">
-                        <div class="text">StudyNotion</div>
-                        <p>It is a fully functional ed-tech platform that enables users to create, consume, and rate educational content. The platform is built using the MERN Stack.</p>
-                    </div>
-                    <a href="https://github.com/sahilwarkhade" target="_blank">Read More</a>
-                </div>
-                <!-- <div class="card">
-                    <div class="box">
-                        <img src="images/projectT2.png" alt="ProjectImage">
-                        <div class="text">ThreadCraft</div>
-                        <p>An AI-Powered T-Shirt Designer.It is a Designing tool for your ecommerce store.In which you can design your own T-shirt using Canvas and Artificial Intelligence(openAI).</p>
-                    </div>
-                    <a href="https://github.com/sahilwarkhade" target="_blank">Read More</a>
-                </div> -->
-                <div class="card">
-                    <div class="box">
-                        <img src="images/projectChat.png" alt="ProjectImage">
-                        <div class="text">ChatSync: Chat Application</div>
-                        <p>You can send messages to your friends,family or colleague in real time.This application is built using the socket.io and MERN stack.
+                        <i class="fas fa-code"></i>
+                        <div class="text">Front-End Developement</div>
+                        <p>As a Front-End developer, my proficiency lies in crafting dynamic and visually appealing web applications using a powerful stack that includes HTML, Tailwind CSS, and React.
                         </p>
                     </div>
-                    <a href="https://github.com/sahilwarkhade" target="_blank">Read More</a>
                 </div>
                 <div class="card">
                     <div class="box">
-                        <img src="images/projectBlog1.png" alt="ProjectImage">
-                        <div class="text">Epicentra: A Blog Website</div>
-                        <p>You have the capability to stay informed with the latest blogs and news, and you can seamlessly share these insightful articles with others.</p>
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="text">Full-Stack Developement</div>
+                        <p>My unequivocal preference in Full-Stack Development gravitates towards the MERN stack, a cohesive and dynamic combination of MongoDB, Express.js, React.js, and Node.js.</p>
                     </div>
-                    <a href="https://github.com/sahilwarkhade" target="_blank">Read More</a>
                 </div>
                 <div class="card">
                     <div class="box">
-                        <img src="images/projectCart2.png" alt="ProjectImage">
-                        <div class="text">Ecomzy-ShoppingCart</div>
-                        <p>You can add your favourite items in the shopping cart.This application is built using React and tailwind CSS</p>
+                        <i class="fas fa-code"></i>
+                        <div class="text">Back-End Developement</div>
+                        <p>
+                            As a seasoned backend developer, I specialize in architecting robust and high-performance applications using the powerful combination of Node.js, Express.js, and MongoDB.</p>
                     </div>
-                    <a href="https://github.com/sahilwarkhade" target="_blank">Read More</a>
+                </div>
+               </div>
+            </div> -->
+            <div class="Profiles">
+                <div class="profile-images" id="profile-container">
+                    <a href="https://www.geeksforgeeks.org/user/sahilwark8ih1/" target="_blank"><img class="icon-profile" src="Images/gfg.png" alt="gfg"></a>
+                    <a href="https://leetcode.com/sahil_warkhade" target="_blank"><img class="icon-profile" src="Images/leetcode.png" alt="LeetCode"></a>
+                    <a href="#" target="_blank"><img class="icon-profile" src="Images/code-forces.svg" alt="Codeforces"></a>
+                    <a href="https://github.com/sahilwarkhade" target="_blank"><img class="icon-profile" src="Images/github.png" alt="GitHub"></a>
+                </div>
+                <div class="profile-text">
+                    <div class="text">About my coding profile's.</div>
+                    <p>I actively contribute to various coding platforms, constantly improving my problem-solving skills and staying up-to-date with new challenges. Whether it's algorithmic problem-solving or real-world application development, I aim to refine my techniques and learn from diverse coding experiences. You can find my work and solutions on platforms like GitHub, LeetCode, Codeforces, and GeeksforGeeks. I strive to write clean, efficient code, with a focus on optimization, scalability, and best practices.</p>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- contact section start -->
     <section class="contact" id="contact">
@@ -297,8 +322,40 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+
+    <!-- MODAL section -->
+    <!-- <button id="openModalBtn">Open Modal</button> -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <!-- Cross button to close the modal -->
+            <span id="closeModalBtn" class="close">&times;</span>
+        
+            <!-- Modal Thumbnail -->
+            <img src="" alt="Thumbnail" class="modal-thumbnail" id="modal-thumbnail">
+        
+            <!-- Modal Title -->
+            <h2 id="modalTitle"></h2>
+        
+            <!-- Modal Description -->
+            <h3>Description : </h3>
+            <p id="des"></p>
+            <p id="modalDescription"></p>
+            <h3>Purpose : </h3>
+            <p id="modalPurpose"></p>
+    
+          <!-- CTA Buttons -->
+            <div class="cta-buttons">
+                <a target="_blank" class="cta-btn" id="github-btn">GitHub</a>
+                <a target="_blank" class="cta-btn" id="link-btn">Visit Now</a>
+            </div>
+        </div>
+    </div>
+
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="emailSender.js"></script>
+    <script src="JS/index.js"></script>
+    <script src="JS/emailSender.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/utileScript.js"></script>
+    <script src="JS/modal.js"></script>
 </body>
 </html>

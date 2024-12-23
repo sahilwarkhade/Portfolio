@@ -1,0 +1,186 @@
+/* Modal background (hidden by default) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 111;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out; /* Animation for the modal background */
+    opacity: 0; /* Start with 0 opacity */
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0px 10px 14px 8px rgba(255, 255, 255, 0.2);
+    /* overflow-y: auto; */
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: rgb(67, 67, 67);
+    padding: 2rem 5rem;
+    border-radius: 8px;
+    width: 90vw;  /* 85% of the viewport width */
+    height: 85vh; /* 85% of the viewport height */
+    /* text-align: center; */
+    position: relative;
+    transform: translateY(-30%); /* Initially positioned above */
+    animation: slideIn 0.5s ease-out forwards; /* Animation for the content */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    overflow-y: auto; /* Prevent content overflow */
+    overflow-x: hidden;
+    opacity: 0; /* Modal content should start with 0 opacity */
+  }
+  
+  /* Cross button (close button) styling */
+  .close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Thumbnail styling */
+  .modal-thumbnail {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px; /* Center the thumbnail and give spacing */
+    border-radius: 8px;
+    object-fit: cover;
+    animation: subtle-float 4s ease-in-out infinite;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0px 10px 14px 8px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Title styling */
+  .modal h2 {
+    margin: 15px 0;
+    font-size: 24px;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  .modal h3{
+    color: #d97c5d;
+  }
+  /* Description styling */
+  .modal p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  /* CTA Buttons container */
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Individual CTA Button Styling */
+  .cta-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-btn:hover {
+    border: 1px solid #fff;
+    background: none;
+  }
+  
+  /* Animation for modal fade-in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for modal content slide-in */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-30%); /* Start from above */
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0); /* Move to normal position */
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for modal fade-out */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  /* Animation for modal content slide-out */
+  @keyframes slideOut {
+    from {
+      transform: translateY(0); /* Start at normal position */
+      opacity: 1;
+    }
+    to {
+      transform: translateY(30%); /* Move downwards to hide */
+      opacity: 0;
+    }
+  }
+  @keyframes subtle-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    }
+  
+  /* Media Queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    .modal-content {
+      width: 90vw; /* 85% of the viewport width */
+      height: 85vh; /* 85% of the viewport height */
+      padding: 1rem 1.25rem;
+      padding-top: 2.5rem;
+      word-break: break-word;
+      box-shadow: none;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .modal-content {
+      width: 90vw; /* Increase the width on very small screens */
+      height: 85vh; /* Maintain height as 85% */
+    }
+  
+    .close {
+      font-size: 24px; /* Make the close button smaller */
+    }
+  }
