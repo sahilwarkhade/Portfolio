@@ -89,8 +89,6 @@ function modalData(index){
   githubBtn.href = project.github_repo_link;
   modalTitle.innerText=project.title;
 
-  // let des=document.createElement("p");
-
   modalDes.innerText=project.description;
 
   modalDescription.innerHTML=`<h3>Tech Stack : </h3> <p>${project.tech_stack}</p>`
@@ -107,19 +105,14 @@ function modalData(index){
 
   modalDescription.appendChild(orderList);
   modalPurpose.textContent=project.purpose
-  console.log(project);
 }
 
 function openModal(e) {
-  modal.style.display = 'flex'; // Show modal
-  modal.querySelector('.modal-content').style.animation = 'slideIn 0.5s ease-out forwards'; // Animate content
-  modal.style.animation = 'fadeIn 0.3s ease-out forwards'; // Animate background fade-in
-  modal.querySelector('.modal-content').style.opacity = '1'; // Make sure content is visible after animation
-  // console.log(":::",e);
-  console.log(e.target.dataset.index);
+  modal.style.display = 'flex';
+  modal.querySelector('.modal-content').style.animation = 'slideIn 0.5s ease-out forwards'; 
+  modal.style.animation = 'fadeIn 0.3s ease-out forwards'; 
+  modal.querySelector('.modal-content').style.opacity = '1'; 
   modalData(e.target.dataset.index);
-  // modal.setAttribute("tabindex", "-1"); // Make it focusable
-  // modal.focus();
 }
 
 // Close modal when the cross button (close button) is clicked
@@ -137,12 +130,11 @@ window.onclick = function(event) {
 // Function to close modal with animation
 function closeModal() {
   const modalContent = modal.querySelector('.modal-content');
-  modalContent.style.animation = 'slideOut 0.5s ease-in forwards'; // Slide-out animation for content
-  modal.style.animation = 'fadeOut 0.3s ease-in forwards'; // Fade-out animation for the background
+  modalContent.style.animation = 'slideOut 0.5s ease-in forwards'; 
+  modal.style.animation = 'fadeOut 0.3s ease-in forwards';
 
-  // Delay hiding modal until after animations are complete
   setTimeout(function() {
-    modal.style.display = 'none'; // Hide the modal
-    modal.querySelector('.modal-content').style.opacity = '0'; // Reset content opacity for next open
-  }, 500); // Match animation duration (500ms)
+    modal.style.display = 'none';
+    modal.querySelector('.modal-content').style.opacity = '0';
+  }, 500); 
 }
